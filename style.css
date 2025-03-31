@@ -1,0 +1,644 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+
+body,
+html {
+  background-color: #f9f9f9;
+  font-family: "Orbitron", sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  font-style: normal;
+  color: inherit;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+  transform: scale(1.05); /* Легке збільшення кнопки */
+  color: var(--color-prime);
+}
+h2 {
+  font-size: 40px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  color: #f44336;
+  font-size: 45px;
+  line-height: 1.3;
+  font-weight: 900;
+}
+.header-color {
+  background-color: #3f2b96;
+}
+.header {
+  color: beige;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  width: 70px;
+}
+
+.menu nav {
+  display: flex;
+  gap: 20px;
+}
+.button img {
+  width: 20px;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 100%;
+  padding: 20px;
+}
+.button {
+  padding: 10px;
+  border: solid 1px beige;
+  border-radius: 10px;
+  background-color: #f44336;
+  width: 150px;
+}
+.hero-button {
+  display: flex;
+  gap: 20px;
+}
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  z-index: 9999;
+  display: none;
+}
+
+#cookie-banner p {
+  margin: 0;
+  font-size: 16px;
+}
+
+#cookie-banner button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#cookie-banner button.decline {
+  background-color: #f44336;
+}
+
+#cookie-banner button:hover {
+  opacity: 0.8;
+}
+
+/* scroll */
+/* Стилізація скролбару на всьому сайті */
+::-webkit-scrollbar {
+  width: 12px; /* Ширина вертикального скролбару */
+  height: 12px; /* Висота горизонтального скролбару */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2a3d66; /* Колір самого скролбару */
+  border-radius: 6px; /* Заокруглені кути */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4b0082; /* Темніше індиго при наведенні */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Колір фону скролбару */
+  border-radius: 6px; /* Заокруглені кути */
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #f1f1f1; /* Колір внутрішньої частини треку */
+}
+
+@media (max-width: 768px) {
+  .container {
+    min-width: 300px;
+    width: 90%;
+  }
+}
+
+/* Загальні стилі для бургер-меню */
+.burger-menu {
+  display: none; /* Ховати бургер-меню на десктопах */
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 999; /* Вищий z-index, щоб бургер-меню було зверху */
+}
+
+.burger-line {
+  width: 30px;
+  height: 4px;
+  background-color: #333;
+  border-radius: 5px;
+}
+
+/* Стилі для меню на мобільних пристроях */
+@media (max-width: 768px) {
+  #nav-menu {
+    /* Тепер звертаємось до id */
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    background-color: #fff;
+    color: #333;
+    width: 200px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 998; /* Зробити menu менше, щоб воно не перекривало бургер */
+  }
+
+  /* Стилі для мобільного меню при відкритті */
+  #nav-menu.active {
+    display: flex; /* Переключаємо на відображення */
+    flex-direction: column; /* Розташовуємо елементи вертикально */
+  }
+
+  /* Показати бургер-меню на мобільних пристроях */
+  .burger-menu {
+    display: flex;
+  }
+}
+
+/* hero-container  */
+.hero-container {
+  display: flex;
+  gap: 30px;
+}
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 50px 0;
+  color: beige;
+}
+
+.hero-img {
+  display: flex;
+  justify-content: end;
+}
+.hero-text,
+.hero-img {
+  flex: 1;
+}
+.hero-img img {
+  border-radius: 20px;
+}
+.hero-info {
+  display: flex;
+  align-items: center;
+}
+.hero-info img {
+  width: 70px;
+}
+.star {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.star img {
+  width: 20px;
+  height: 100%;
+}
+.info-star {
+  padding-right: 20px;
+  border-right: solid 1px #cdcdcd;
+}
+.hero-info {
+  display: flex;
+  gap: 20px;
+}
+
+.hero-img img {
+  animation: float 4s ease-in-out infinite;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.5); /* нахилена тінь */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  position: relative;
+  background: linear-gradient(0deg, #ffffff, #3f2b96); /* Ніжний градієнт фон */
+  padding-bottom: 1px; /* Простір для хвилі */
+  overflow: hidden; /* Щоб хвиля не виходила за межі */
+}
+
+/* Хвиля з плавними підйомами і спусками */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Висота хвилі */
+  background: #fff;
+}
+
+.desc-down > p,
+.desc > p {
+  font-size: 13px;
+}
+/* features */
+
+/* Загальний стиль секції */
+.features {
+  position: relative;
+  margin-top: -100px;
+  color: #333;
+  z-index: 100;
+}
+
+.features h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+/* Стиль для кожного айтема */
+.features-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ефекти при ховері */
+.features-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.features-item i {
+  font-size: 2rem;
+  color: #3f2b96;
+}
+
+/* Мобільна адаптація */
+@media (max-width: 768px) {
+  .features-container {
+    grid-template-columns: 1fr; /* Один стовпець для маленьких екранів */
+  }
+}
+
+/* about */
+
+.about-img img {
+  width: 400px;
+  border-radius: 20px;
+  animation: float 4s ease-in-out infinite;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.5); /* нахилена тінь */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.about-container {
+  margin-top: 50px;
+  display: flex;
+  gap: 100px;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 30px;
+  color: #333;
+  font-weight: 400;
+}
+
+.color {
+  color: #f44336;
+}
+
+/* game */
+/* Загальні стилі для секції */
+.game {
+  margin: 50px 0;
+  background: linear-gradient(95deg, #ffffff, #3f2b96); /* Градієнт фон */
+  color: #333; /* Білий текст */
+  padding: 60px 20px; /* Відступи */
+  text-align: center; /* Центруємо текст */
+}
+
+/* Стилі для контейнера */
+.game-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Тінь */
+}
+
+/* Стиль для заголовка */
+.game h2.color {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s ease; /* Анімація зміни кольору */
+}
+
+/* Ефект при ховері на заголовок */
+.game h2.color:hover {
+  color: #f44336; /* Зміна кольору на жовтий при наведенні */
+  cursor: pointer; /* Зміна курсору */
+}
+
+/* Стиль для абзацу */
+.game p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 20px 0;
+  color: #f1f1f1; /* Світлий текст */
+  font-family: "Roboto", sans-serif; /* Шрифт */
+}
+
+/* Мобільна адаптація */
+@media (max-width: 768px) {
+  .game-container {
+    padding: 20px;
+  }
+
+  .game h2.color {
+    font-size: 2rem; /* Менший розмір шрифта на мобільних */
+  }
+
+  .game p {
+    font-size: 1rem; /* Менший шрифт для абзацу */
+  }
+}
+
+/* Стилі для секції відгуків */
+.reviews {
+  padding: 60px 20px;
+  color: #333;
+  text-align: center;
+}
+
+.reviews h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #3f2b96;
+}
+
+.reviews-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Стиль для кожного відгуку */
+.review-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Інформація користувача */
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.user-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.user-name h4 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #333;
+}
+
+.user-name p {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Стилі для рейтингу */
+.review-rating .stars {
+  color: #f1c40f;
+  margin-bottom: 15px;
+}
+
+.review-rating .stars i {
+  font-size: 1.2rem;
+}
+
+/* Текст відгуку */
+.review-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+  .reviews-container {
+    grid-template-columns: 1fr; /* Один стовпець для маленьких екранів */
+  }
+}
+
+/* pay */
+
+.pay {
+  padding: 50px 0;
+  background: linear-gradient(95deg, #ffffff, #3f2b96); /* Градієнт фон */
+}
+
+.pay-container {
+  display: flex;
+  gap: 50px;
+}
+
+.pay-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.pay-video img {
+  border-radius: 20px;
+  animation: float 4s ease-in-out infinite;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.5); /* нахилена тінь */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* footer */
+.footer {
+  background: linear-gradient(95deg, #ffffff, #3f2b96); /* Градієнт фон */
+}
+
+.footer .container {
+  border-top: solid 1px #adadad;
+}
+.container-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.policy-menu {
+  color: beige;
+}
+.hero-button a {
+  color: beige;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+  }
+
+  .hero-img {
+    justify-content: center;
+  }
+  .hero-img img {
+    min-width: 300px;
+    width: 100%;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-img img {
+    min-width: 300px;
+    width: 100%;
+  }
+
+  .game-contaiter {
+    min-width: 300px;
+    width: 100%;
+  }
+
+  .game h2.color {
+    font-size: 22px;
+  }
+
+  .pay-container {
+    flex-direction: column;
+  }
+  .pay-video img {
+    min-width: 300px;
+    width: 100%;
+  }
+
+  .container-footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .container-footer p {
+    font-size: 13px;
+  }
+
+  .policy-menu nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
